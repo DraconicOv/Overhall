@@ -4,7 +4,6 @@
 
 package frc.robot.configs;
 
-import com.ctre.phoenix6.signals.NeutralModeValue;
 import com.revrobotics.CANSparkMax.IdleMode;
 
 public final class SwerveConstants {
