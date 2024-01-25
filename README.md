@@ -1,0 +1,1 @@
+V2 Version of Beef. Needs more changes, intergrating with what we have (unless we decide to restart altogether) will be a pain. I don't claim to have written all of this, it is in no small part a frankenstein of other projects/robots/repos.
