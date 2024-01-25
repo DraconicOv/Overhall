@@ -1,11 +1,10 @@
 package frc.robot.template;
 
-import org.littletonrobotics.junction.AutoLog;
+// import org.littletonrobotics.junction.AutoLog;
 
 /** Generic subsystem hardware interface. */
 public interface SubsystemIO {
   /** Contains all of the input data received from hardware. */
-  @AutoLog
   public static class SubsystemIOInputs {
     double positionDeg = 0.0;
     double velocityRPM = 0.0;

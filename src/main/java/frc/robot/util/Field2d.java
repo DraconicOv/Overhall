@@ -9,7 +9,6 @@ import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.wpilibj.DriverStation;
 import frc.robot.configs.RobotConfig;
 import frc.robot.subsystems.Drivetrain;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;

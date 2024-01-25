@@ -5,8 +5,6 @@ import edu.wpi.first.math.geometry.Transform3d;
 import edu.wpi.first.math.geometry.Translation3d;
 import frc.robot.configs.SwerveConstants.SwerveType;
 
-
-
 public class DefaultRobotConfig extends RobotConfig {
 
   // FIXME: update all CAN IDs and steer offsets

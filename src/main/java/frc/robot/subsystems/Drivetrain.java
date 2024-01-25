@@ -4,6 +4,8 @@
 
 package frc.robot.subsystems;
 
+import static frc.robot.configs.Constants.*;
+
 import com.pathplanner.lib.auto.AutoBuilder;
 import com.pathplanner.lib.util.HolonomicPathFollowerConfig;
 import com.pathplanner.lib.util.PIDConstants;
@@ -26,13 +28,11 @@ import frc.robot.configs.DrivetrainConstants;
 import frc.robot.configs.RobotConfig;
 import frc.robot.subsystems.DrivetrainIO.SwerveIOInputs;
 import frc.robot.util.Alert;
-import frc.robot.util.TunableNumber;
 import frc.robot.util.Alert.AlertType;
-
-import static frc.robot.configs.Constants.*;
-
-import java.util.function.Supplier;
 import frc.robot.util.FaultReporter;
+import frc.robot.util.TunableNumber;
+import java.util.function.Supplier;
+
 /**
  * This subsystem models the robot's drivetrain mechanism. It consists of a four MK4 swerve modules,
  * each with two motors and an encoder. It also consists of a Gyro which is used to measure the
@@ -79,7 +79,6 @@ public class Drivetrain extends SubsystemBase {
 
   private boolean isMoveToPoseEnabled;
 
-  
   private ChassisSpeeds prevSpeeds = new ChassisSpeeds();
   private double[] prevSteerVelocitiesRevPerMin = new double[4];
   private Alert noPoseAlert =
@@ -111,7 +110,6 @@ public class Drivetrain extends SubsystemBase {
         .addBoolean("Field-Relative Enabled?", () -> this.isFieldRelative)
         .withPosition(8, 0)
         .withSize(1, 1);
-
 
     AutoBuilder.configureHolonomic(
         this::getPose, // Robot pose supplier
@@ -642,7 +640,11 @@ public class Drivetrain extends SubsystemBase {
 
   private Command getSystemCheckCommand() {
     return Commands.sequence(Commands.sequence(Commands.waitSeconds(0.25)))
-        .until(() -> !FaultReporter.getInstance().getFaults(DrivetrainConstants.SUBSYSTEM_NAME).isEmpty())
+        .until(
+            () ->
+                !FaultReporter.getInstance()
+                    .getFaults(DrivetrainConstants.SUBSYSTEM_NAME)
+                    .isEmpty())
         .andThen(Commands.runOnce(() -> drive(0, 0, 0, true, false), this));
   }
 

@@ -1,8 +1,5 @@
 package frc.robot.vision;
 
-
-import java.lang.Cloneable;
-import java.lang.Override;
 import org.littletonrobotics.junction.LogTable;
 import org.littletonrobotics.junction.inputs.LoggableInputs;
 
@@ -18,7 +15,8 @@ public class VisionLogger extends VisionIO.VisionIOInputs implements LoggableInp
   @Override
   public void fromLog(LogTable table) {
     estimatedRobotPose = table.get("EstimatedRobotPose", estimatedRobotPose);
-    estimatedRobotPoseTimestamp = table.get("EstimatedRobotPoseTimestamp", estimatedRobotPoseTimestamp);
+    estimatedRobotPoseTimestamp =
+        table.get("EstimatedRobotPoseTimestamp", estimatedRobotPoseTimestamp);
     estimatedRobotPoseTags = table.get("EstimatedRobotPoseTags", estimatedRobotPoseTags);
     lastCameraTimestamp = table.get("LastCameraTimestamp", lastCameraTimestamp);
   }

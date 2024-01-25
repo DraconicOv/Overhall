@@ -15,7 +15,6 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.configs.Constants;
 import frc.robot.util.Alert;
 import frc.robot.util.Alert.AlertType;
-
 import java.util.ArrayList;
 import java.util.List;
 import org.littletonrobotics.junction.Logger;

@@ -5,6 +5,7 @@
 package frc.robot;
 
 import static frc.robot.FieldRegionConstants.*;
+
 import com.pathplanner.lib.auto.NamedCommands;
 import com.pathplanner.lib.commands.PathPlannerAuto;
 import com.pathplanner.lib.path.PathPlannerPath;
@@ -24,10 +25,10 @@ import frc.robot.commands.FeedForwardCharacterization.FeedForwardCharacterizatio
 import frc.robot.commands.RotateToAngle;
 import frc.robot.commands.TeleopSwerve;
 import frc.robot.configs.Constants;
+import frc.robot.configs.Constants.Mode;
 import frc.robot.configs.DefaultRobotConfig;
 import frc.robot.configs.RobotConfig;
 import frc.robot.configs.VisionConstants;
-import frc.robot.configs.Constants.Mode;
 import frc.robot.pneumatics.Pneumatics;
 import frc.robot.pneumatics.PneumaticsIORev;
 import frc.robot.subsystems.Drivetrain;
@@ -36,16 +37,14 @@ import frc.robot.subsystems.DrivetrainIOGeneric;
 import frc.robot.subsystems.GyroIO;
 import frc.robot.subsystems.MAXSwerveModuleIO;
 import frc.robot.subsystems.SwerveModuleIO;
-import frc.robot.template.SubsystemIO;
-
 import frc.robot.template.Subsystem;
+import frc.robot.template.SubsystemIO;
 import frc.robot.util.Field2d;
 import frc.robot.util.Region2d;
 import frc.robot.vision.Vision;
 import frc.robot.vision.VisionIO;
 import frc.robot.vision.VisionIOPhotonVision;
 import frc.robot.vision.VisionIOSim;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Optional;
@@ -116,8 +115,7 @@ public class RobotContainer {
    */
   private void createRobotConfig() {
 
-        config = new DefaultRobotConfig();
-  
+    config = new DefaultRobotConfig();
   }
 
   private void createSubsystems() {
@@ -126,20 +124,16 @@ public class RobotContainer {
     int[] steerEncoderCANDIDs = config.getSwerveSteerEncoderCANIDs();
     double[] steerOffsets = config.getSwerveSteerOffsets();
     SwerveModuleIO flModule =
-        new MAXSwerveModuleIO(
-            0, driveMotorCANIDs[0], steerMotorCANDIDs[0], steerOffsets[0]);
+        new MAXSwerveModuleIO(0, driveMotorCANIDs[0], steerMotorCANDIDs[0], steerOffsets[0]);
 
     SwerveModuleIO frModule =
-        new MAXSwerveModuleIO(
-            1, driveMotorCANIDs[1], steerMotorCANDIDs[1],  steerOffsets[1]);
+        new MAXSwerveModuleIO(1, driveMotorCANIDs[1], steerMotorCANDIDs[1], steerOffsets[1]);
 
     SwerveModuleIO blModule =
-        new MAXSwerveModuleIO(
-            2, driveMotorCANIDs[2], steerMotorCANDIDs[2], steerOffsets[2]);
+        new MAXSwerveModuleIO(2, driveMotorCANIDs[2], steerMotorCANDIDs[2], steerOffsets[2]);
 
     SwerveModuleIO brModule =
-        new MAXSwerveModuleIO(
-            3, driveMotorCANIDs[3], steerMotorCANDIDs[3], steerOffsets[3]);
+        new MAXSwerveModuleIO(3, driveMotorCANIDs[3], steerMotorCANDIDs[3], steerOffsets[3]);
 
     // GyroIO gyro = new GyroIOPigeon2Phoenix6(config.getGyroCANID());
     GyroIO gyro = null;
@@ -151,7 +145,7 @@ public class RobotContainer {
     subsystem = new Subsystem(new SubsystemIO() {});
 
     new Pneumatics(new PneumaticsIORev());
-    
+
     // TODO: Change if we are simulating
     if (false) {
       AprilTagFieldLayout layout;

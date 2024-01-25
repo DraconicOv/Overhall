@@ -8,7 +8,6 @@ import com.ctre.phoenix6.configs.CurrentLimitsConfigs;
 import com.ctre.phoenix6.configs.MotorOutputConfigs;
 import com.ctre.phoenix6.configs.Slot0Configs;
 import com.ctre.phoenix6.configs.TalonFXConfiguration;
-
 import com.ctre.phoenix6.controls.PositionVoltage;
 import com.ctre.phoenix6.controls.VelocityVoltage;
 import com.ctre.phoenix6.controls.VoltageOut;
@@ -24,7 +23,6 @@ import com.ctre.phoenix6.sim.CANcoderSimState;
 import com.ctre.phoenix6.sim.ChassisReference;
 import com.ctre.phoenix6.sim.TalonFXSimState;
 import com.revrobotics.RelativeEncoder;
-
 import edu.wpi.first.math.numbers.N1;
 import edu.wpi.first.math.numbers.N2;
 import edu.wpi.first.math.system.plant.LinearSystemId;
@@ -35,11 +33,10 @@ import frc.robot.configs.RobotConfig;
 import frc.robot.configs.SwerveConstants;
 import frc.robot.subsystems.DrivetrainIO.SwerveIOInputs;
 import frc.robot.util.Alert;
-import frc.robot.util.Conversions;
 import frc.robot.util.Alert.AlertType;
+import frc.robot.util.Conversions;
 import frc.robot.util.FaultReporter;
 import frc.robot.util.TunableNumber;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,7 +67,7 @@ public class SwerveModuleIOTalonFXPhoenix6 implements SwerveModuleIO {
   private final boolean canCoderInverted;
 
   private final String canBusName = RobotConfig.getInstance().getCANBusName();
-  
+
   private TalonFX angleMotor;
   private TalonFX driveMotor;
   private RelativeEncoder angleEncoder;
@@ -122,7 +119,7 @@ public class SwerveModuleIOTalonFXPhoenix6 implements SwerveModuleIO {
 
       wheelCircumference = SwerveConstants.MK4_L2_WHEEL_CIRCUMFERENCE;
       driveGearRatio = SwerveConstants.MK4_L2_DRIVE_GEAR_RATIO;
-      driveMotorInverted =SwerveConstants.MK4_L2_DRIVE_MOTOR_INVERTED;
+      driveMotorInverted = SwerveConstants.MK4_L2_DRIVE_MOTOR_INVERTED;
       angleGearRatio = SwerveConstants.MK4_L2_ANGLE_GEAR_RATIO;
       angleMotorInverted = SwerveConstants.MK4_L2_ANGLE_MOTOR_INVERTED;
       canCoderInverted = SwerveConstants.MK4_L2_CAN_CODER_INVERTED;

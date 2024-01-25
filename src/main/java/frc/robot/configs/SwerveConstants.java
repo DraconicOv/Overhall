@@ -71,47 +71,47 @@ public final class SwerveConstants {
 
   public static final double kDrivingEncoderPositionFactor = 0;
 
-public static final double kDrivingEncoderVelocityFactor = 0;
+  public static final double kDrivingEncoderVelocityFactor = 0;
 
-public static final boolean kTurningEncoderInverted = false;
+  public static final boolean kTurningEncoderInverted = false;
 
-public static final double kTurningEncoderPositionPIDMinInput = 0;
+  public static final double kTurningEncoderPositionPIDMinInput = 0;
 
-public static final double kTurningEncoderPositionFactor = 0;
+  public static final double kTurningEncoderPositionFactor = 0;
 
-public static final double kTurningEncoderVelocityFactor = 0;
+  public static final double kTurningEncoderVelocityFactor = 0;
 
-public static final double kTurningEncoderPositionPIDMaxInput = 0;
+  public static final double kTurningEncoderPositionPIDMaxInput = 0;
 
-public static final double kDrivingP = 0;
+  public static final double kDrivingP = 0;
 
-public static final double kDrivingI = 0;
+  public static final double kDrivingI = 0;
 
-public static final double kDrivingD = 0;
+  public static final double kDrivingD = 0;
 
-public static final double kDrivingMinOutput = 0;
+  public static final double kDrivingMinOutput = 0;
 
-public static final double kDrivingFF = 0;
+  public static final double kDrivingFF = 0;
 
-public static final double kDrivingMaxOutput = 0;
+  public static final double kDrivingMaxOutput = 0;
 
-public static final int kTurningMotorCurrentLimit = 0;
+  public static final int kTurningMotorCurrentLimit = 0;
 
-public static final int kDrivingMotorCurrentLimit = 0;
+  public static final int kDrivingMotorCurrentLimit = 0;
 
-public static final IdleMode kTurningMotorIdleMode = null;
+  public static final IdleMode kTurningMotorIdleMode = null;
 
-public static final IdleMode kDrivingMotorIdleMode = null;
+  public static final IdleMode kDrivingMotorIdleMode = null;
 
-public static final double kTurningMinOutput = 0;
+  public static final double kTurningMinOutput = 0;
 
-public static final double kTurningP = 0;
+  public static final double kTurningP = 0;
 
-public static final double kTurningI = 0;
+  public static final double kTurningI = 0;
 
-public static final double kTurningD = 0;
+  public static final double kTurningD = 0;
 
-public static final double kTurningFF = 0;
+  public static final double kTurningFF = 0;
 
-public static final double kTurningMaxOutput = 0;
+  public static final double kTurningMaxOutput = 0;
 }

@@ -14,7 +14,6 @@ import java.util.List;
 import java.util.Map;
 import org.littletonrobotics.junction.Logger;
 
-
 public class FaultReporter {
   public enum SystemStatus {
     OK,

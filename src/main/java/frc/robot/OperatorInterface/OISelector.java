@@ -6,7 +6,7 @@
  * Initially from https://github.com/Mechanical-Advantage/RobotCode2022
  */
 
- package frc.robot.OperatorInterface;
+package frc.robot.OperatorInterface;
 
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;

@@ -12,7 +12,6 @@ import edu.wpi.first.math.kinematics.SwerveModuleState;
 import frc.robot.configs.Constants;
 import frc.robot.configs.RobotConfig;
 import frc.robot.util.RobotOdometry;
-
 import java.util.ArrayList;
 import java.util.List;
 import org.littletonrobotics.junction.Logger;
@@ -114,7 +113,6 @@ public class DrivetrainIOGeneric implements DrivetrainIO {
 
   @Override
   public void updateInputs(DrivetrainIOInputsCollection inputs) {
-
 
     // update and log gyro inputs
     gyroIO.updateInputs(inputs.gyro);

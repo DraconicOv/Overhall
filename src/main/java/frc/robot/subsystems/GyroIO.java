@@ -1,10 +1,7 @@
-
-
 package frc.robot.subsystems;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.littletonrobotics.junction.AutoLog;
 
 @java.lang.SuppressWarnings({"java:S1104"})
 
@@ -25,7 +22,7 @@ import org.littletonrobotics.junction.AutoLog;
  * when not connected.
  */
 public interface GyroIO {
-  @AutoLog
+
   public static class GyroIOInputs {
     public boolean connected = false;
     public double yawDeg = 0.0;

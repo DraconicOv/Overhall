@@ -1,6 +1,5 @@
 package frc.robot.util;
 
-
 import edu.wpi.first.math.Matrix;
 import edu.wpi.first.math.estimator.SwerveDrivePoseEstimator;
 import edu.wpi.first.math.geometry.Pose2d;
@@ -42,28 +41,22 @@ public class RobotOdometry {
 
   public void resetPosition(
       Rotation2d gyroAngle, SwerveModulePosition[] modulePositions, Pose2d poseMeters) {
-  
-      this.estimator.resetPosition(gyroAngle, modulePositions, poseMeters);
-  
+
+    this.estimator.resetPosition(gyroAngle, modulePositions, poseMeters);
   }
 
   public Pose2d updateWithTime(
       double currentTimeSeconds, Rotation2d gyroAngle, SwerveModulePosition[] modulePositions) {
-      return this.estimator.updateWithTime(currentTimeSeconds, gyroAngle, modulePositions);
-
-    
+    return this.estimator.updateWithTime(currentTimeSeconds, gyroAngle, modulePositions);
   }
 
   public void addVisionMeasurement(
       Pose2d visionRobotPoseMeters,
       double timestampSeconds,
       Matrix<N3, N1> visionMeasurementStdDevs) {
-      this.estimator.addVisionMeasurement(
-          visionRobotPoseMeters, timestampSeconds, visionMeasurementStdDevs);
-
-  
+    this.estimator.addVisionMeasurement(
+        visionRobotPoseMeters, timestampSeconds, visionMeasurementStdDevs);
   }
-
 
   public static RobotOdometry getInstance() {
     return robotOdometry;

@@ -8,8 +8,6 @@
 
 package frc.robot.pneumatics;
 
-import org.littletonrobotics.junction.AutoLog;
-
 @java.lang.SuppressWarnings({"java:S1104"})
 
 /**
@@ -20,7 +18,7 @@ import org.littletonrobotics.junction.AutoLog;
  * regulator (low pressure). In addition, there is a flow sensor. (We use the SMC PFM711-N7-C-R.)
  */
 public interface PneumaticsIO {
-  @AutoLog
+
   public static class PneumaticsIOInputs {
     double highPressurePSI = 0.0;
     double lowPressurePSI = 0.0;

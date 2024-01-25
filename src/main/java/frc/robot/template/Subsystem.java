@@ -1,4 +1,5 @@
 package frc.robot.template;
+
 import static frc.robot.template.SubsystemConstants.*;
 
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
@@ -8,7 +9,6 @@ import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.util.FaultReporter;
 import frc.robot.util.TunableNumber;
-
 import org.littletonrobotics.junction.Logger;
 
 /**

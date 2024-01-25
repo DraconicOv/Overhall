@@ -13,12 +13,11 @@ import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.configs.VisionConstants;
 import frc.robot.util.Alert;
 import frc.robot.util.Alert.AlertType;
 import frc.robot.util.RobotOdometry;
 import frc.robot.util.TunableNumber;
-import frc.robot.configs.VisionConstants;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Optional;
@@ -47,7 +46,8 @@ public class Vision extends SubsystemBase {
 
   private RobotOdometry odometry;
   private final TunableNumber poseDifferenceThreshold =
-      new TunableNumber("Vision/VisionPoseThreshold", VisionConstants.POSE_DIFFERENCE_THRESHOLD_METERS);
+      new TunableNumber(
+          "Vision/VisionPoseThreshold", VisionConstants.POSE_DIFFERENCE_THRESHOLD_METERS);
   private final TunableNumber stdDevSlope = new TunableNumber("Vision/stdDevSlope", 0.10);
   private final TunableNumber stdDevPower = new TunableNumber("Vision/stdDevPower", 2.0);
   private final TunableNumber stdDevMultiTagFactor =
@@ -119,7 +119,10 @@ public class Vision extends SubsystemBase {
     for (AprilTag tag : layout.getTags()) {
       layout
           .getTagPose(tag.ID)
-          .ifPresent(pose -> Logger.recordOutput(VisionConstants.SUBSYSTEM_NAME + "/AprilTags/" + tag.ID, pose));
+          .ifPresent(
+              pose ->
+                  Logger.recordOutput(
+                      VisionConstants.SUBSYSTEM_NAME + "/AprilTags/" + tag.ID, pose));
     }
   }
 
@@ -141,7 +144,8 @@ public class Vision extends SubsystemBase {
       if (ios[i].lastCameraTimestamp + 0.1 < lastTimestamps[i]) {
         Logger.recordOutput(VisionConstants.SUBSYSTEM_NAME + "/" + i + "/RobotPose", new Pose2d());
         for (AprilTag tag : this.layout.getTags()) {
-          Logger.recordOutput(VisionConstants.SUBSYSTEM_NAME + "/" + i + "/TagID" + "_" + tag.ID, false);
+          Logger.recordOutput(
+              VisionConstants.SUBSYSTEM_NAME + "/" + i + "/TagID" + "_" + tag.ID, false);
         }
       }
 
@@ -163,13 +167,16 @@ public class Vision extends SubsystemBase {
         }
 
         for (AprilTag tag : this.layout.getTags()) {
-          Logger.recordOutput(VisionConstants.SUBSYSTEM_NAME + "/" + i + "/TagID" + "_" + tag.ID, false);
+          Logger.recordOutput(
+              VisionConstants.SUBSYSTEM_NAME + "/" + i + "/TagID" + "_" + tag.ID, false);
         }
         for (int tagID : ios[i].estimatedRobotPoseTags) {
-          Logger.recordOutput(VisionConstants.SUBSYSTEM_NAME + "/" + i + "/TagID" + "_" + tagID, true);
+          Logger.recordOutput(
+              VisionConstants.SUBSYSTEM_NAME + "/" + i + "/TagID" + "_" + tagID, true);
         }
 
-        Logger.recordOutput(VisionConstants.SUBSYSTEM_NAME + "/" + i + "/RobotPose", estimatedRobotPose2d);
+        Logger.recordOutput(
+            VisionConstants.SUBSYSTEM_NAME + "/" + i + "/RobotPose", estimatedRobotPose2d);
       }
     }
     Logger.recordOutput(VisionConstants.SUBSYSTEM_NAME + "/IsEnabled", isEnabled);
