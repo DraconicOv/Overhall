@@ -182,9 +182,7 @@ public class DrivetrainIOGeneric implements DrivetrainIO {
     inputs.drivetrain.measuredVYMetersPerSec = measuredChassisSpeeds.vyMetersPerSecond;
     inputs.drivetrain.measuredAngularVelocityRadPerSec =
         measuredChassisSpeeds.omegaRadiansPerSecond;
-
     inputs.drivetrain.averageDriveCurrent = this.getAverageDriveCurrent(inputs);
-
     inputs.drivetrain.rotation = Rotation2d.fromDegrees(this.robotRotationDeg);
   }
 
